@@ -1,3 +1,11 @@
+;; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To create a file, visit it with Ctrl+X Ctrl+F and enter text in its buffer.
+
+
+
+;; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To create a file, visit it with Ctrl+X Ctrl+F and enter text in its buffer.
+
 (setq show-paren-style 'expression)
 
 
@@ -37,3 +45,31 @@
 ;; If you want to use last tagged version
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
+
+
+;; https://www.emacswiki.org/emacs/SrSpeedbar
+
+(require 'sr-speedbar)
+
+(global-set-key (kbd "<f12>") 'sr-speedbar-toggle)
+
+;; https://www.emacswiki.org/emacs/Yasnippet
+
+
+
+(add-to-list 'load-path
+              "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
+
+(global-set-key (kbd "<f10>") 'yas-new-snippet)
+
+;; http://www.nongnu.org/color-theme/#sec5
+
+(add-to-list 'load-path "~/.emacs.d/plugins/color-theme/")
+(require 'color-theme)
+(color-theme-initialize)
+(setq color-theme-is-global t)
+
+
+;; (color-theme-select) 
